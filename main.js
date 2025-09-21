@@ -62,4 +62,15 @@ Horário: ${horario}`;
         servicoInput.value = '';
         servicoCheckboxes.forEach(checkbox => checkbox.checked = false);
     });
+
+    document.getElementById('open-google-reviews').onclick = function() {
+        document.getElementById('google-reviews-modal').style.display = 'flex';
+    };
+    document.querySelector('.close-modal').onclick = function() {
+        document.getElementById('google-reviews-modal').style.display = 'none';
+    };
+    window.onclick = function(event) {
+        const modal = document.getElementById('google-reviews-modal');
+        if (event.target === modal) modal.style.display = 'none';
+    };
 });
